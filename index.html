@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#06111f" />
+  <title>Elektrovoz bilim platformasi</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="rail-bg" aria-hidden="true">
+    <div class="rail-line rail-line-1"></div>
+    <div class="rail-line rail-line-2"></div>
+    <div class="spark spark-1"></div>
+    <div class="spark spark-2"></div>
+    <div class="spark spark-3"></div>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Bosh sahifa">
+      <span class="brand-mark">⚡</span>
+      <span>
+        <strong data-i18n="brand">Elektrovoz bilim sinovi</strong>
+        <small data-i18n="brandSub">Ta’mirlovchi ishchi-xodimlar uchun</small>
+      </span>
+    </a>
+    <div class="top-actions">
+      <button id="langBtn" class="chip" type="button">Кирилл</button>
+      <button id="themeBtn" class="chip" type="button" aria-label="Kun/tun rejimi">☀️</button>
+    </div>
+  </header>
+
+  <main id="home" class="shell">
+    <section class="hero card-glass">
+      <div class="hero-copy">
+        <div class="eyebrow" data-i18n="eyebrow">Temir yo‘l elektrovoz ta’miri</div>
+        <h1 class="glow-title" data-i18n="title">Elektrovozlarni ta’mirlovchi ishchi-xodimlar uchun bilimlarni sinash platformasi</h1>
+        <p data-i18n="subtitle">Savollar va javoblar har safar aralashtiriladi. Javob tanlanmaguncha keyingi savolga o‘tib bo‘lmaydi.</p>
+        <div class="hero-actions">
+          <a href="#categories" class="primary-btn" data-i18n="startBtn">Testni boshlash</a>
+          <button id="openResultsBtn" class="ghost-btn" type="button" data-i18n="lastResult">Oxirgi natija</button>
+        </div>
+      </div>
+      <div class="loco-panel" aria-hidden="true">
+        <svg viewBox="0 0 540 260" role="img">
+          <defs>
+            <linearGradient id="trainGrad" x1="0" x2="1">
+              <stop offset="0" stop-color="#25d8ff" />
+              <stop offset="0.5" stop-color="#3a86ff" />
+              <stop offset="1" stop-color="#8b5cf6" />
+            </linearGradient>
+          </defs>
+          <path d="M64 148 C118 105, 185 82, 296 88 L404 96 C447 100, 480 125, 498 159 L64 159 Z" fill="rgba(21, 39, 67, .95)" stroke="url(#trainGrad)" stroke-width="4"/>
+          <path d="M112 126 L202 105 L282 106 L300 147 L92 147 Z" fill="rgba(37,216,255,.13)" stroke="rgba(37,216,255,.65)"/>
+          <path d="M317 108 L396 116 C424 119, 448 132, 463 149 L329 149 Z" fill="rgba(139,92,246,.15)" stroke="rgba(139,92,246,.65)"/>
+          <circle cx="136" cy="170" r="30" fill="#08131f" stroke="#24d7ff" stroke-width="5"/>
+          <circle cx="268" cy="170" r="30" fill="#08131f" stroke="#24d7ff" stroke-width="5"/>
+          <circle cx="407" cy="170" r="30" fill="#08131f" stroke="#24d7ff" stroke-width="5"/>
+          <path d="M54 207 H506" stroke="rgba(255,255,255,.35)" stroke-width="6" stroke-linecap="round"/>
+          <path class="pantograph" d="M245 88 L286 38 L330 88 M286 38 H372" fill="none" stroke="#ffd166" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="stats-grid" aria-label="Statistika">
+      <div class="stat-card"><span id="catCount">0</span><p data-i18n="directions">yo‘nalish</p></div>
+      <div class="stat-card"><span id="questionCount">0</span><p data-i18n="questions">savol</p></div>
+      <div class="stat-card"><span>100%</span><p data-i18n="offline">GitHub Pages</p></div>
+    </section>
+
+    <section id="categories" class="section-head">
+      <div>
+        <h2 data-i18n="chooseTitle">Yo‘nalishni tanlang</h2>
+        <p data-i18n="chooseDesc">Kartochka ustiga borganda rang va hajm o‘zgaradi. Har bir bo‘lim alohida test sifatida ishlaydi.</p>
+      </div>
+      <div class="filters card-glass">
+        <label>
+          <span data-i18n="searchLabel">Qidirish</span>
+          <input id="searchInput" type="search" placeholder="Masalan: mehnat, g‘ildirak, mexanik..." />
+        </label>
+        <label>
+          <span data-i18n="sizeLabel">Test hajmi</span>
+          <select id="questionLimit">
+            <option value="20">20 ta savol</option>
+            <option value="30">30 ta savol</option>
+            <option value="50">50 ta savol</option>
+            <option value="all">Barcha savollar</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section id="categoryGrid" class="category-grid"></section>
+
+    <section class="contact card-glass">
+      <div>
+        <h3 data-i18n="contactTitle">Murojaat uchun</h3>
+        <p data-i18n="contactPerson">VChD-5 ICHTB boshlig‘i G‘aniyev F.B.</p>
+      </div>
+      <div class="contact-actions">
+        <a class="contact-pill" href="tel:+998941085696">☎ +998 94 108 56 96</a>
+        <a class="contact-pill" href="https://t.me/FARRUX3336" target="_blank" rel="noopener">✈ @FARRUX3336</a>
+      </div>
+    </section>
+  </main>
+
+  <section id="quizView" class="quiz-view hidden">
+    <div class="quiz-shell card-glass">
+      <div class="quiz-top">
+        <button id="backBtn" class="ghost-btn" type="button" data-i18n="back">← Orqaga</button>
+        <div class="quiz-meta">
+          <span id="quizTitle">Test</span>
+          <strong id="timer">00:00</strong>
+        </div>
+      </div>
+      <div class="progress-wrap"><div id="progressBar" class="progress-bar"></div></div>
+      <div class="quiz-status">
+        <span id="questionNo">1 / 20</span>
+        <span id="scoreLive">To‘g‘ri: 0</span>
+      </div>
+      <article class="question-card">
+        <h2 id="questionText"></h2>
+        <div id="answerList" class="answer-list"></div>
+      </article>
+      <div id="feedback" class="feedback hidden"></div>
+      <div class="quiz-actions">
+        <button id="nextBtn" class="primary-btn" type="button" disabled data-i18n="next">Keyingi savol</button>
+        <button id="finishBtn" class="ghost-btn" type="button" data-i18n="finish">Natija</button>
+      </div>
+    </div>
+  </section>
+
+  <dialog id="resultDialog" class="result-dialog">
+    <div class="result-box card-glass">
+      <button id="closeResult" class="x-btn" type="button">×</button>
+      <h2 data-i18n="resultTitle">Test yakunlandi</h2>
+      <div class="result-circle"><span id="resultPercent">0%</span></div>
+      <p id="resultSummary"></p>
+      <div class="result-actions">
+        <button id="retryBtn" class="primary-btn" type="button" data-i18n="retry">Qayta topshirish</button>
+        <button id="homeBtn" class="ghost-btn" type="button" data-i18n="homeBtn">Bosh sahifa</button>
+        <button id="exportBtn" class="ghost-btn" type="button" data-i18n="exportBtn">CSV yuklash</button>
+      </div>
+    </div>
+  </dialog>
+
+  <footer class="footer">
+    <span data-i18n="footerText">Elektrovoz ta’miri bo‘yicha bilimlarni sinash platformasi</span>
+    <span>•</span>
+    <span data-i18n="footerContact">Murojaat uchun: G‘aniyev F.B.</span>
+  </footer>
+
+  <script src="question_bank.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

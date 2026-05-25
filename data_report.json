@@ -1,0 +1,42 @@
+{
+  "total_categories": 7,
+  "total_questions": 337,
+  "raw_records": 423,
+  "categories": [
+    {
+      "id": "mehnat-muhofazasi",
+      "title": "Mehnat muhofazasi",
+      "questions": 59
+    },
+    {
+      "id": "ijtimoiy-siyosiy",
+      "title": "Ijtimoiy-siyosiy savollar",
+      "questions": 30
+    },
+    {
+      "id": "mexanik-qism",
+      "title": "Elektrovozlarning mexanik qismi tuzilishi",
+      "questions": 54
+    },
+    {
+      "id": "gildirak-juftligi",
+      "title": "Lokomotiv g‘ildirak juftliklari",
+      "questions": 58
+    },
+    {
+      "id": "tayyorlov-sexi",
+      "title": "Tayyorlov sexi test savollari",
+      "questions": 55
+    },
+    {
+      "id": "tayyorlov-21-sex",
+      "title": "Tayyorlov 21-sex savollari",
+      "questions": 31
+    },
+    {
+      "id": "zagot-21-sex",
+      "title": "ZAGOT 21-sex savollari",
+      "questions": 50
+    }
+  ]
+}
