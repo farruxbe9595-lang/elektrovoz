@@ -58,7 +58,21 @@
   }
   function applyLang(){
     document.documentElement.lang = state.lang === 'cyr' ? 'uz-Cyrl' : 'uz-Latn';
-    document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+    
+      if (state.lang === 'cyr' && key === 'contactPerson') {
+        el.textContent = 'ВЧД-5 ИЧТБ бошлиғи Ғаниев Ф.Б.';
+        return;
+      }
+    
+      if (state.lang === 'lat' && key === 'contactPerson') {
+        el.textContent = 'VChD-5 ICHTB boshlig‘i G‘aniyev F.B.';
+        return;
+      }
+    
+      el.textContent = t(key);
+    });
     $('langBtn').textContent = state.lang === 'lat' ? 'Кирилл' : 'Lotin';
     $('searchInput').placeholder = tr('Masalan: mehnat, g‘ildirak, mexanik...');
     [...$('questionLimit').options].forEach(opt => {
