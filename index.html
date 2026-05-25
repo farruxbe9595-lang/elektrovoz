@@ -22,7 +22,7 @@
     <a class="brand" href="#home" aria-label="Bosh sahifa">
       <span class="brand-mark">⚡</span>
       <span>
-        <strong data-i18n="brand">Elektrovoz bilim sinovi</strong>
+        <strong class="brand-live-title" data-i18n="brand">Elektrovoz bilim sinovi</strong>
         <small data-i18n="brandSub">Ta’mirlovchi ishchi-xodimlar uchun</small>
       </span>
     </a>
@@ -33,6 +33,17 @@
   </header>
 
   <main id="home" class="shell">
+    <section class="contact-top card-glass">
+      <div class="contact-top-copy">
+        <h3 data-i18n="contactTitle">Murojaat uchun</h3>
+        <p data-i18n="contactPerson">VChD-5 ICHTB boshlig‘i G‘aniyev F.B.</p>
+      </div>
+      <div class="contact-actions">
+        <a class="contact-pill" href="tel:+998941085696">☎ +998 94 108 56 96</a>
+        <a class="contact-pill" href="https://t.me/FARRUX3336" target="_blank" rel="noopener">✈ @FARRUX3336</a>
+      </div>
+    </section>
+
     <section class="hero card-glass">
       <div class="hero-copy">
         <div class="eyebrow" data-i18n="eyebrow">Temir yo‘l elektrovoz ta’miri</div>
@@ -44,22 +55,58 @@
         </div>
       </div>
       <div class="loco-panel" aria-hidden="true">
-        <svg viewBox="0 0 540 260" role="img">
+        <svg class="hero-train" viewBox="0 0 760 360" role="img">
           <defs>
-            <linearGradient id="trainGrad" x1="0" x2="1">
-              <stop offset="0" stop-color="#25d8ff" />
-              <stop offset="0.5" stop-color="#3a86ff" />
-              <stop offset="1" stop-color="#8b5cf6" />
+            <linearGradient id="bodyGlow" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#19e0ff" />
+              <stop offset="0.45" stop-color="#3f8cff" />
+              <stop offset="1" stop-color="#9b5cff" />
             </linearGradient>
+            <linearGradient id="bodyFill" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#0f2744" />
+              <stop offset="0.55" stop-color="#102b52" />
+              <stop offset="1" stop-color="#261d5f" />
+            </linearGradient>
+            <linearGradient id="windowFill" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#9be8ff" />
+              <stop offset="1" stop-color="#7fb4ff" />
+            </linearGradient>
+            <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="6" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
           </defs>
-          <path d="M64 148 C118 105, 185 82, 296 88 L404 96 C447 100, 480 125, 498 159 L64 159 Z" fill="rgba(21, 39, 67, .95)" stroke="url(#trainGrad)" stroke-width="4"/>
-          <path d="M112 126 L202 105 L282 106 L300 147 L92 147 Z" fill="rgba(37,216,255,.13)" stroke="rgba(37,216,255,.65)"/>
-          <path d="M317 108 L396 116 C424 119, 448 132, 463 149 L329 149 Z" fill="rgba(139,92,246,.15)" stroke="rgba(139,92,246,.65)"/>
-          <circle cx="136" cy="170" r="30" fill="#08131f" stroke="#24d7ff" stroke-width="5"/>
-          <circle cx="268" cy="170" r="30" fill="#08131f" stroke="#24d7ff" stroke-width="5"/>
-          <circle cx="407" cy="170" r="30" fill="#08131f" stroke="#24d7ff" stroke-width="5"/>
-          <path d="M54 207 H506" stroke="rgba(255,255,255,.35)" stroke-width="6" stroke-linecap="round"/>
-          <path class="pantograph" d="M245 88 L286 38 L330 88 M286 38 H372" fill="none" stroke="#ffd166" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <g class="motion-lines" opacity="0.48">
+            <path d="M40 70 H180" stroke="#3fd8ff" stroke-width="4" stroke-linecap="round"/>
+            <path d="M22 112 H134" stroke="#8f68ff" stroke-width="4" stroke-linecap="round"/>
+            <path d="M560 66 H716" stroke="#ffd166" stroke-width="4" stroke-linecap="round"/>
+          </g>
+
+          <path d="M92 298 H692" stroke="rgba(255,255,255,0.4)" stroke-width="10" stroke-linecap="round"/>
+          <path d="M118 314 H668" stroke="rgba(37,216,255,0.18)" stroke-width="6" stroke-linecap="round"/>
+
+          <g filter="url(#softGlow)">
+            <path d="M154 214 L214 130 C230 108 256 96 282 96 H528 C564 96 598 114 620 146 L674 214 Z" fill="url(#bodyFill)" stroke="url(#bodyGlow)" stroke-width="5"/>
+            <path d="M170 212 H676 L708 230 H134 Z" fill="rgba(24,38,67,0.96)" stroke="url(#bodyGlow)" stroke-width="5"/>
+            <path d="M212 138 H328 L308 198 H180 Z" fill="url(#windowFill)" opacity="0.92" stroke="rgba(169,239,255,0.8)" stroke-width="2.5"/>
+            <path d="M340 138 H466 V198 H320 Z" fill="url(#windowFill)" opacity="0.78" stroke="rgba(169,239,255,0.65)" stroke-width="2.5"/>
+            <path d="M486 138 H570 C585 138 599 145 610 158 L638 198 H486 Z" fill="rgba(119,94,255,0.3)" stroke="rgba(174,141,255,0.72)" stroke-width="2.5"/>
+            <path d="M180 230 H640" stroke="rgba(255,209,102,0.65)" stroke-width="4" stroke-linecap="round"/>
+            <path d="M612 186 H638" stroke="#ffd166" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="624" cy="190" r="7" fill="#ffd166"/>
+            <circle cx="200" cy="246" r="42" fill="#08131f" stroke="#24d7ff" stroke-width="8"/>
+            <circle cx="200" cy="246" r="18" fill="#0d2238" stroke="#7ee7ff" stroke-width="4"/>
+            <circle cx="386" cy="246" r="42" fill="#08131f" stroke="#24d7ff" stroke-width="8"/>
+            <circle cx="386" cy="246" r="18" fill="#0d2238" stroke="#7ee7ff" stroke-width="4"/>
+            <circle cx="586" cy="246" r="42" fill="#08131f" stroke="#24d7ff" stroke-width="8"/>
+            <circle cx="586" cy="246" r="18" fill="#0d2238" stroke="#7ee7ff" stroke-width="4"/>
+            <path d="M410 98 L454 50 L500 98 M454 50 H530" fill="none" stroke="#ffd166" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" class="pantograph"/>
+            <path d="M454 50 L454 24" stroke="#ffd166" stroke-width="4" stroke-linecap="round"/>
+          </g>
         </svg>
       </div>
     </section>
@@ -94,16 +141,6 @@
 
     <section id="categoryGrid" class="category-grid"></section>
 
-    <section class="contact card-glass">
-      <div>
-        <h3 data-i18n="contactTitle">Murojaat uchun</h3>
-        <p data-i18n="contactPerson">VChD-5 ICHTB boshlig‘i G‘aniyev F.B.</p>
-      </div>
-      <div class="contact-actions">
-        <a class="contact-pill" href="tel:+998941085696">☎ +998 94 108 56 96</a>
-        <a class="contact-pill" href="https://t.me/FARRUX3336" target="_blank" rel="noopener">✈ @FARRUX3336</a>
-      </div>
-    </section>
   </main>
 
   <section id="quizView" class="quiz-view hidden">
@@ -148,8 +185,6 @@
 
   <footer class="footer">
     <span data-i18n="footerText">Elektrovoz ta’miri bo‘yicha bilimlarni sinash platformasi</span>
-    <span>•</span>
-    <span data-i18n="footerContact">Murojaat uchun: G‘aniyev F.B.</span>
   </footer>
 
   <script src="question_bank.js"></script>
